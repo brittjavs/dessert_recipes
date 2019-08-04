@@ -1,5 +1,5 @@
 class DessertRecipes::Recipes
-  attr_accessor :name, :url, :description, :ingredients, :instructions, :total_time, :serving
+  attr_accessor :name, :url, :description, :total_time, :serving, :ingredients, :instructions
   @@all = []
 
   def self.all
