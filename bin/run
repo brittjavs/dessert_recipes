@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/dessert_recipes'
+require "bundler/setup"
+require_relative "..lib/dessert_recipes"
 
 DessertRecipes::CLI.new.call
