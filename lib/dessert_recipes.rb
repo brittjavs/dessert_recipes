@@ -3,7 +3,7 @@ module DessertRecipes
   # # Your code goes here...
 end
 
-
+require "bundler/setup"
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
