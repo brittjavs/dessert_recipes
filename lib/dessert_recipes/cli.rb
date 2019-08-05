@@ -1,23 +1,25 @@
 class DessertRecipes::CLI
   def call
     welcome
-    # list recipes
+    list_recipes
+    binding.pry
     # select_recipe
   end
   
   def welcome
   puts "You have reached the dessert recipe index."
   end
+
+  def list_recipes
+  DessertRecipes::Recipes.all.each_with_index do |recipe, index|
+    puts "#{index + 1}. #{recipe.name}"
+  end
+  end
 end
-#   def list_recipes
-#     recipes = DessertRecipes::Recipes.all.each_with_index do|recipe, index|
-#     puts "#{index + 1}. #{recipe.name}"
-#   end
-  
 #   def select_recipe
 #     input = ""
 #   while input != "exit"
-#   puts "Which recipe would you like to view?"
+#   puts "Please enter the number for recipe you would like to view."
 #   input = gets.strip
   
 #   if input.to_i < DessertRecipes::Recipes.all.size

@@ -6,9 +6,9 @@ class DessertRecipes::Scraper
       recipe = DessertRecipes::Recipes.new
       recipe.name = recipe_card.css(".thumbnail_text_content").text.strip
       recipe.url = recipe_card.css("a").attribute("href").text
-      
       recipe.save
   end
+    DessertRecipes::Recipes.all
   end
   
   def scrape_recipe_info
