@@ -1,14 +1,14 @@
-# class DessertRecipes::CLI
-#   def call
-#     welcome
-#     list recipes
-#     select_recipe
-#   end
+class DessertRecipes::CLI
+  def call
+    welcome
+    # list recipes
+    # select_recipe
+  end
   
-#   def welcome
-#   puts "You have reached the dessert recipe index."
-#   end
-  
+  def welcome
+  puts "You have reached the dessert recipe index."
+  end
+end
 #   def list_recipes
 #     recipes = DessertRecipes::Recipes.all.each_with_index do|recipe, index|
 #     puts "#{index + 1}. #{recipe.name}"

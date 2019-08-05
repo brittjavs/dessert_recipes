@@ -20,5 +20,5 @@ class DessertRecipes::Scraper
     # instructions = page.css(".ERSInstructions").collect do |li| li.css(".instruction").text.split(".")
   end
 end
-end
-end
+# end
+# end

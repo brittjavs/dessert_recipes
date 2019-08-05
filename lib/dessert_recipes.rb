@@ -1,4 +1,3 @@
-require "bundler/setup"
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
