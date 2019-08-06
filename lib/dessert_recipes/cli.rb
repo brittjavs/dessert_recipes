@@ -11,23 +11,23 @@ class DessertRecipes::CLI
   end
 
   def list_recipes
-  DessertRecipes::Recipes.all.each_with_index do |recipe, index|
+  DessertRecipes::Recipes.all.take(50).each_with_index do |recipe, index|
     puts "#{index + 1}. #{recipe.name}"
   end
   end
 
 def select_recipe
-     input = ""
+   input = ""
    while input != "exit"
    puts "Please enter the number for recipe you would like to view."
    input = gets.strip
   
-   if input.to_i.between?(1, DessertRecipes::Recipes.all.size)
+   if input.to_i.between?(1, 50)
      recipe = DessertRecipes::Recipes.all[input.to_i-1]
      puts recipe.name
      puts ""
      DessertRecipes::Scraper.scrape_recipe_info(recipe)
-    
+     puts recipe.description
    end
  end
  end
