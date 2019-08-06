@@ -3,7 +3,7 @@ class DessertRecipes::CLI
     welcome
     DessertRecipes::Scraper.scrape_recipes
     list_recipes
-    # select_recipe
+    select_recipe
   end
   
   def welcome
@@ -15,11 +15,12 @@ class DessertRecipes::CLI
     puts "#{index + 1}. #{recipe.name}"
   end
   end
-# def select_recipe
-#     input = ""
-#   while input != "exit"
-#   puts "Please enter the number for recipe you would like to view."
-#   input = gets.strip
+
+def select_recipe
+     input = ""
+   while input != "exit"
+   puts "Please enter the number for recipe you would like to view."
+   input = gets.strip
   
 #   if input.to_i < DessertRecipes::Recipes.all.size
 #     recipe = DessertRecipes::Recipes.all[input.to_i-1]
@@ -28,5 +29,6 @@ class DessertRecipes::CLI
 #     puts "#{recipe.serving}"
 #     puts "Ingredients: #{recipe.ingredients}"
 #     puts "Instructions :#{recipe.instructions}"
-#   end
-# end
+   end
+ end
+end

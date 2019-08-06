@@ -10,8 +10,9 @@ class DessertRecipes::Scraper
   end
   end
   
-  def scrape_recipe_info
-    page = Nokogiri::HTML(open("https://www.loveandlemons.com/vegan-chocolate-chip-cookies/"))
+  def self.scrape_recipe_info
+    page = Nokogiri::HTML(open(recipe.url))
+    binding.pry
     description = page.css(".entry-header h2").text
     total_time = page.css(".ERSTimeItem")[2].text
     serving = page.css(".ERSServes").text
