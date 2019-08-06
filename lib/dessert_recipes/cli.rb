@@ -1,6 +1,7 @@
 class DessertRecipes::CLI
   def call
     welcome
+    DessertRecipes::Scraper.scrape_recipes
     list_recipes
     # select_recipe
   end
@@ -14,8 +15,7 @@ class DessertRecipes::CLI
     puts "#{index + 1}. #{recipe.name}"
   end
   end
-end
-#   def select_recipe
+# def select_recipe
 #     input = ""
 #   while input != "exit"
 #   puts "Please enter the number for recipe you would like to view."
