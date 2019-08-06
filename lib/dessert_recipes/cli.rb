@@ -34,7 +34,10 @@ def select_recipe
      puts ""
      puts recipe.serving
      puts ""
+     puts "Ingredients"
      puts recipe.ingredients
+     puts 
+    # binding.pry
    end
  end
  end

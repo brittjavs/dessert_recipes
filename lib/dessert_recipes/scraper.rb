@@ -16,9 +16,10 @@ class DessertRecipes::Scraper
     recipe.description = page.css(".entry-header h2").text
     recipe.total_time = page.css("time[itemprop=totalTime]").text
     recipe.serving = page.css(".ERSServes").text
-    recipe.ingredients = page.css(".ERSIngredients").collect do |item| page.css(".ingredient").text
+    recipe.ingredients = page.css(".ingredient").map(&:text)
+   
     # recipe.instructions = page.css(".ERSInstructions").collect do |li| li.css(".instruction").text.split(".")
   end
 end
-end
+# end
 # end
