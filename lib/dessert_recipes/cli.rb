@@ -28,6 +28,13 @@ def select_recipe
      puts ""
      DessertRecipes::Scraper.scrape_recipe_info(recipe)
      puts recipe.description
+     puts ""
+     puts "Total Time (Prep + Cook Time):"
+     puts recipe.total_time
+     puts ""
+     puts recipe.serving
+     puts ""
+     puts recipe.ingredients
    end
  end
  end
