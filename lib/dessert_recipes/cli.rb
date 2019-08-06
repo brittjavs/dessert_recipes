@@ -2,7 +2,6 @@ class DessertRecipes::CLI
   def call
     welcome
     list_recipes
-    binding.pry
     # select_recipe
   end
   
