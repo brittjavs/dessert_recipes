@@ -22,13 +22,13 @@ def select_recipe
    puts "Please enter the number for recipe you would like to view."
    input = gets.strip
   
-#   if input.to_i < DessertRecipes::Recipes.all.size
-#     recipe = DessertRecipes::Recipes.all[input.to_i-1]
-#     puts "#{recipe.description}"
-#     puts "Total Cooking Time: #{recipe.total_time}"
-#     puts "#{recipe.serving}"
-#     puts "Ingredients: #{recipe.ingredients}"
-#     puts "Instructions :#{recipe.instructions}"
+   if input.to_i.between?(1, DessertRecipes::Recipes.all.size)
+     recipe = DessertRecipes::Recipes.all[input.to_i-1]
+     puts recipe.name
+     puts ""
+     DessertRecipes::Scraper.scrape_recipe_info(recipe)
+    
    end
+ end
  end
 end

@@ -10,15 +10,16 @@ class DessertRecipes::Scraper
   end
   end
   
-  def self.scrape_recipe_info
+  def self.scrape_recipe_info(recipe)
+    url = recipe.url
     page = Nokogiri::HTML(open(recipe.url))
+    recipe.description = page.css(".entry-header h2").text
+    recipe.total_time = page.css(".ERSTimeItem")[2].text
     binding.pry
-    description = page.css(".entry-header h2").text
-    total_time = page.css(".ERSTimeItem")[2].text
-    serving = page.css(".ERSServes").text
-    # ingredients = page.css(".ERSIngredients").collect do |item| page.css(".ingredient").first.text
-    # instructions = page.css(".ERSInstructions").collect do |li| li.css(".instruction").text.split(".")
+    recipe.serving = page.css(".ERSServes").text
+    # recipe.ingredients = page.css(".ERSIngredients").collect do |item| page.css(".ingredient").text
+    # recipe.instructions = page.css(".ERSInstructions").collect do |li| li.css(".instruction").text.split(".")
   end
 end
-# end
-# end
+end
+end
