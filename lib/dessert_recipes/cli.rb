@@ -38,7 +38,9 @@ def select_recipe
      puts recipe.ingredients
      puts ""
      puts "Instructions"
-     puts recipe.instructions
+     recipe.instructions.each_with_index {|step, index|
+       puts "#{index + 1}. #{step}"}
+      
 
     # binding.pry
    end
