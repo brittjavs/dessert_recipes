@@ -7,7 +7,7 @@ class DessertRecipes::Scraper
       recipe.name = recipe_card.css(".thumbnail_text_content").text.strip
       recipe.url = recipe_card.css("a").attribute("href").text
       recipe.save
-  end
+    end
   end
   
   def self.scrape_recipe_info(recipe)
@@ -18,9 +18,6 @@ class DessertRecipes::Scraper
     recipe.serving = page.css(".ERSServes").text
     recipe.ingredients = page.css(".ingredient").map(&:text)
     recipe.instructions = page.css(".instruction").map(&:text)
-      # binding.pry
-  
-    end
   end
-
-# end
+    
+  end

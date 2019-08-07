@@ -4,10 +4,11 @@ class DessertRecipes::CLI
     DessertRecipes::Scraper.scrape_recipes
     list_recipes
     select_recipe
+    menu_or_exit
   end
   
   def welcome
-  puts "You have reached the dessert recipe index."
+  puts "You have reached the dessert recipe index. Please enter the number for recipe you would like to view."
   end
 
   def list_recipes
@@ -19,7 +20,6 @@ class DessertRecipes::CLI
 def select_recipe
    input = ""
    while input != "exit"
-   puts "Please enter the number for recipe you would like to view."
    input = gets.strip
   
    if input.to_i.between?(1, 50)
@@ -40,10 +40,19 @@ def select_recipe
      puts "Instructions"
      recipe.instructions.each_with_index {|step, index|
        puts "#{index + 1}. #{step}"}
-      
-
-    # binding.pry
+     end
+  end
+ end
+ 
+ def menu_or_exit
+   input = ""
+   puts "If you would like to view another recipe, please enter 'menu'. If you would like to exit, enter 'exit'."
+   second_input = gets.strip
+   if second_input =="menu"
+     list_recipes
+   else 
+     puts "Happy Baking! Goodbye!"
    end
  end
- end
+ 
 end
