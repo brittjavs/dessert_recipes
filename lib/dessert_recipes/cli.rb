@@ -15,7 +15,7 @@ class DessertRecipes::CLI
     puts "#{index + 1}. #{recipe.name}"
   end
   end
-
+  
 def select_recipe
    input = ""
    while input != "exit"
@@ -36,7 +36,10 @@ def select_recipe
      puts ""
      puts "Ingredients"
      puts recipe.ingredients
-     puts 
+     puts ""
+     puts "Instructions"
+     puts recipe.instructions
+
     # binding.pry
    end
  end
