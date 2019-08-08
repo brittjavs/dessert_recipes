@@ -3,12 +3,12 @@ class DessertRecipes::CLI
     welcome
     DessertRecipes::Scraper.scrape_recipes
     list_recipes
-    select_recipe
-    menu_or_exit
+    get_recipe
+    return_option
   end
   
   def welcome
-  puts "You have reached the dessert recipe index. Please enter the number for recipe you would like to view."
+  puts "Welcome! You have reached the dessert recipe index."
   end
 
   def list_recipes
@@ -17,8 +17,9 @@ class DessertRecipes::CLI
   end
   end
   
-def select_recipe
-   input = ""
+def get_recipe
+   input = nil
+   puts "Please enter the number for recipe you would like to view."
    while input != "exit"
    input = gets.strip
   
@@ -28,31 +29,30 @@ def select_recipe
      puts ""
      DessertRecipes::Scraper.scrape_recipe_info(recipe)
      puts recipe.description
-     puts ""
-     puts "Total Time (Prep + Cook Time):"
+     puts "\nTotal Time (Prep + Cook Time):"
      puts recipe.total_time
      puts ""
      puts recipe.serving
-     puts ""
-     puts "Ingredients"
+     puts "\nIngredients"
      puts recipe.ingredients
-     puts ""
-     puts "Instructions"
+     puts "\nInstructions"
      recipe.instructions.each_with_index {|step, index|
        puts "#{index + 1}. #{step}"}
-     end
+     puts "\nIf you would like to view another recipe, please enter 'menu'. If you would like to exit, enter 'exit'."
+     
+    elsif input == "menu"
+      puts "Here is the recipe index"
+      list_recipes
+      puts "Please enter the number for recipe you would like to view."
+      
+    elsif input == "exit"  
+      puts "Goodbye!"
+      exit
+      
+    else
+      puts "Invalid entry. Please enter a number or 'exit'"
+    end
   end
- end
- 
- def menu_or_exit
-   input = ""
-   puts "If you would like to view another recipe, please enter 'menu'. If you would like to exit, enter 'exit'."
-   second_input = gets.strip
-   if second_input =="menu"
-     list_recipes
-   else 
-     puts "Happy Baking! Goodbye!"
-   end
  end
  
 end
