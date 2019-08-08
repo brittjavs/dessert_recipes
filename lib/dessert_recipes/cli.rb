@@ -4,7 +4,6 @@ class DessertRecipes::CLI
     DessertRecipes::Scraper.scrape_recipes
     list_recipes
     get_recipe
-    return_option
   end
   
   def welcome
