@@ -45,11 +45,11 @@ def get_recipe
       puts "Please enter the number for recipe you would like to view."
       
     elsif input == "exit"  
-      puts "Goodbye!"
+      puts "You are what you eat, so eat something sweet! Goodbye"
       exit
       
     else
-      puts "Invalid entry. Please enter a number or 'exit'"
+      puts "Invalid entry"
     end
   end
  end
