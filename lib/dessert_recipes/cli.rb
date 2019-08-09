@@ -11,7 +11,7 @@ class DessertRecipes::CLI
   end
 
   def list_recipes
-  DessertRecipes::Recipes.all.take(50).each_with_index do |recipe, index|
+  DessertRecipes::Recipes.all.take(30).each_with_index do |recipe, index|
     puts "#{index + 1}. #{recipe.name}"
   end
   end
