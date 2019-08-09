@@ -14,8 +14,16 @@ class DessertRecipes::Scraper
     url = recipe.url
     page = Nokogiri::HTML(open(recipe.url))
     recipe.description = page.css(".entry-header h2").text
-    recipe.total_time = page.css("time[itemprop=totalTime]").text
-    recipe.serving = page.css(".ERSServes").text
+    if page.css("time[itemprop=totalTime]").text != ""
+      recipe.total_time = page.css("time[itemprop=totalTime]").text
+    else
+      recipe.total_time = "Not Available"
+    end
+    if page.css(".ERSServes").text != ""
+      recipe.serving = page.css(".ERSServes").text
+    else
+      recipe.serving = "Not Available"
+    end
     recipe.ingredients = page.css(".ingredient").map(&:text)
     recipe.instructions = page.css(".instruction").map(&:text)
   end
