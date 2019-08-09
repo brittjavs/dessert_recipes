@@ -40,12 +40,12 @@ def get_recipe
      puts "\nIf you would like to view another recipe, please enter 'menu'. If you would like to exit, enter 'exit'."
      
     elsif input == "menu"
-      puts "Here is the recipe index"
+      puts "Here is the recipe index."
       list_recipes
-      puts "Please enter the number for recipe you would like to view."
+      puts "\nPlease enter the number for recipe you would like to view."
       
     elsif input == "exit"  
-      puts "You are what you eat, so eat something sweet! Goodbye"
+      puts "Remember: You are what you eat, so eat something sweet! Goodbye"
       exit
       
     else
