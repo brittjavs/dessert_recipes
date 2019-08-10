@@ -18,7 +18,7 @@ class DessertRecipes::CLI
   
 def get_recipe
    input = nil
-   puts "Please enter the number for recipe you would like to view."
+   puts "Please enter the number for the recipe you would like to view"
    while input != "exit"
    input = gets.strip
   
@@ -49,7 +49,7 @@ def get_recipe
       exit
       
     else
-      puts "Invalid entry"
+      puts "Invalid entry."
     end
   end
  end

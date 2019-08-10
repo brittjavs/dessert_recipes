@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To start the CLI enter "bin/run" and follow prompts. Enter a number to choose a recipe, 'exit' to exit, and 'menu' to return to recipe list.
 
 ## Development
 
