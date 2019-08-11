@@ -6,7 +6,8 @@ class DessertRecipes::CLI
   end
   
   def welcome
-  puts "Welcome! Browse through the recipes and when you are ready, enter the number for the recipe you would like to view. To exit, type 'exit'.".colorize(:yellow)
+  puts "\nWelcome! Browse through the recipes and when you are ready, enter the number for the recipe you would like to view. To exit, type 'exit'.".colorize(:yellow)
+  puts "\n=============================================================================\n".colorize(:yellow)
   end
 
   def list_recipes
@@ -24,7 +25,7 @@ def get_recipe
    if input.to_i.between?(1, 30)
      recipe = DessertRecipes::Recipes.all[input.to_i-1]
      puts recipe.name.colorize(:yellow)
-     puts ""
+     puts "=============================================================================".colorize(:yellow)
      DessertRecipes::Scraper.scrape_recipe_info(recipe)
      puts WordWrap.ww(recipe.description, 80)
      puts "\nTotal Time (Prep + Cook Time):"
