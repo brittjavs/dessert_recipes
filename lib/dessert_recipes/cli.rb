@@ -6,7 +6,7 @@ class DessertRecipes::CLI
   end
   
   def welcome
-  puts "\nWelcome! Browse through the recipes and when you are ready, enter the number for the recipe you would like to view. To exit, type 'exit'.".colorize(:yellow)
+  puts "\nWelcome! Browse through the recipes list of delicious desserts and when you are ready, enter the number for the recipe you would like to view. To exit, type 'exit'.".colorize(:yellow)
   puts "\n=============================================================================\n".colorize(:yellow)
   end
 
@@ -40,7 +40,8 @@ def get_recipe
      puts "\nIf you would like to view another recipe, please enter 'list'. If you would like to exit, enter 'exit'.".colorize(:green)
      
     elsif input == "list"
-      puts "You have returned to the recipe list.".colorize(:yellow)
+      puts "\nYou have returned to the recipe list.\n".colorize(:yellow)
+      puts "=============================================================================".colorize(:yellow)
       list_recipes
       puts "\nPlease enter the number for recipe you would like to view.".colorize(:green)
       
