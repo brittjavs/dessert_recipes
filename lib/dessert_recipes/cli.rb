@@ -26,7 +26,7 @@ def get_recipe
      puts recipe.name.colorize(:yellow)
      puts ""
      DessertRecipes::Scraper.scrape_recipe_info(recipe)
-     puts recipe.description.colorize
+     puts recipe.description
      puts "\nTotal Time (Prep + Cook Time):"
      puts recipe.total_time
      puts ""
