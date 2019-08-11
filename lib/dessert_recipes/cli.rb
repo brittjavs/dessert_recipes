@@ -26,7 +26,7 @@ def get_recipe
      puts recipe.name.colorize(:yellow)
      puts ""
      DessertRecipes::Scraper.scrape_recipe_info(recipe)
-     puts recipe.description
+     puts WordWrap.ww(recipe.description, 80)
      puts "\nTotal Time (Prep + Cook Time):"
      puts recipe.total_time
      puts ""
@@ -35,7 +35,7 @@ def get_recipe
      puts recipe.ingredients
      puts "\nInstructions"
      recipe.instructions.each_with_index {|step, index|
-       puts "#{index + 1}. #{step}"}
+       puts "\n#{index + 1}. #{step}\n".wrap(80)}
      puts "\nIf you would like to view another recipe, please enter 'list'. If you would like to exit, enter 'exit'.".colorize(:green)
      
     elsif input == "list"
