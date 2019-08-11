@@ -6,7 +6,8 @@ class DessertRecipes::CLI
   end
   
   def welcome
-  puts "Welcome! You have reached the dessert recipe index."
+  puts "Welcome! Browse through the recipes and when you are ready, enter the number for the recipe you would like to view. To exit, type 'exit'."
+  sleep 1.5
   end
 
   def list_recipes
@@ -18,7 +19,6 @@ class DessertRecipes::CLI
   
 def get_recipe
    input = nil
-   puts "Please enter the number for the recipe you would like to view"
    while input != "exit"
    input = gets.strip
   
@@ -37,10 +37,10 @@ def get_recipe
      puts "\nInstructions"
      recipe.instructions.each_with_index {|step, index|
        puts "#{index + 1}. #{step}"}
-     puts "\nIf you would like to view another recipe, please enter 'menu'. If you would like to exit, enter 'exit'."
+     puts "\nIf you would like to view another recipe, please enter 'list'. If you would like to exit, enter 'exit'."
      
-    elsif input == "menu"
-      puts "Here is the recipe index."
+    elsif input == "list"
+      puts "You have returned to the recipe list."
       list_recipes
       puts "\nPlease enter the number for recipe you would like to view."
       
@@ -49,7 +49,7 @@ def get_recipe
       exit
       
     else
-      puts "Invalid entry."
+      puts "Invalid entry. To return to the recipe list, enter 'list'. To exit, enter 'exit'."
     end
   end
  end
