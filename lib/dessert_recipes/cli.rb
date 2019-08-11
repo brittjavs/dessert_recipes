@@ -6,7 +6,7 @@ class DessertRecipes::CLI
   end
   
   def welcome
-  puts "\nWelcome! Browse through the recipes list of delicious desserts and when you are ready, enter the number for the recipe you would like to view. To exit, type 'exit'.".colorize(:yellow)
+  puts "\nWelcome! Browse through the recipes list of delicious desserts and when you are ready, enter the number for the recipe you would like to view.\nIf you would like to exit, type 'exit'.".colorize(:yellow)
   puts "\n=============================================================================\n".colorize(:yellow)
   end
 
@@ -37,7 +37,7 @@ def get_recipe
      puts "\nInstructions"
      recipe.instructions.each_with_index {|step, index|
        puts "\n#{index + 1}. #{step}\n".wrap(80)}
-     puts "\nIf you would like to view another recipe, please enter 'list'. If you would like to exit, enter 'exit'.".colorize(:green)
+     puts "\nIf you would like to view another recipe, please enter 'list'. \nIf you would like to exit, enter 'exit'.".colorize(:green)
      
     elsif input == "list"
       puts "\nYou have returned to the recipe list.\n".colorize(:yellow)
@@ -50,7 +50,7 @@ def get_recipe
       exit
       
     else
-      puts "Invalid entry! To return to the recipe list, enter 'list'. To exit, enter 'exit'.".colorize(:red)
+      puts "Invalid entry! \nTo return to the recipe list, enter 'list'. To exit, enter 'exit'.".colorize(:red)
     end
   end
  end
