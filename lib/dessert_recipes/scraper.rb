@@ -3,9 +3,8 @@ class DessertRecipes::Scraper
   def self.scrape_recipes
     doc = Nokogiri::HTML(open("https://www.loveandlemons.com/recipes/dessert-recipes"))
     doc.css(".lnl-rb-parent li.ri-cat-dessert").each do |recipe_card|
-      name = recipe_card.css(".thumbnail_text_content").text.strip
-      url = recipe_card.css("a").attribute("href").text
-      DessertRecipes::Recipes.new(name, url)
+
+      DessertRecipes::Recipes.create_from_scrape(recipe_card)
     end
   end
   

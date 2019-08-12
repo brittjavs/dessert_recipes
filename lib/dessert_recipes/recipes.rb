@@ -7,6 +7,12 @@ class DessertRecipes::Recipes
     save
   end
   
+  def self.create_from_scrape(recipe_card)
+    name = recipe_card.css(".thumbnail_text_content").text.strip
+    url = recipe_card.css("a").attribute("href").text
+    DessertRecipes::Recipes.new(name, url)
+  end
+  
   def self.all
     @@all
   end
