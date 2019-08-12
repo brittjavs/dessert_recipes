@@ -1,6 +1,7 @@
 class DessertRecipes::CLI
   def call
     welcome
+    DessertRecipes::Scraper.scrape_recipes
     list_recipes
     get_recipe
   end
@@ -11,7 +12,6 @@ class DessertRecipes::CLI
   end
 
   def list_recipes
-  DessertRecipes::Scraper.scrape_recipes
   DessertRecipes::Recipes.all.take(30).each_with_index do |recipe, index|
     puts "#{index + 1}. #{recipe.name}"
   end
